@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <HelloWorld msg="hi!" />
       <button>1231</button>
-      <li></li>
+      <li>1234567891011121314151617181920</li>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -19,3 +19,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
   <RouterView />
 </template>
+
+<script>
+const poke = []
+</script>
+
+<!-- 
+array of pokemon
+
+
+ -->
