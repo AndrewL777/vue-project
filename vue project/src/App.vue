@@ -1,31 +1,32 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
+<script setup></script>
+
+<script>
+export default {
+  data() {
+    return {
+      pokemons: [
+        {
+          name: 'Charizard',
+          url: 'https://st.depositphotos.com/2935381/4237/i/950/depositphotos_42373695-stock-photo-grey-paper-texture-or-background.jpg'
+        },
+        { name: 'Charmander' },
+        { name: 'Blastoise' }
+      ]
+    }
+  }
+}
 </script>
 
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="hi!" />
-      <button>1231</button>
-      <li>1234567891011121314151617181920</li>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <button>1231</button>
+    <li v-for="pokemon in pokemons" in>{{ pokemon.name }} <img src="{{pokemon.url}}" /></li>
   </header>
-
-  <RouterView />
 </template>
 
-<script>
-const poke = []
-</script>
-
-<!-- 
-array of pokemon
-
-
- -->
+<!-- data() { return { items: [{ message: 'Foo' }, { message: 'Bar' }] } } template
+<li v-for="item in items">
+  {{ item.message }}
+</li> -->
