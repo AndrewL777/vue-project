@@ -1,5 +1,3 @@
-<script setup></script>
-
 <script>
 export default {
   data() {
@@ -19,10 +17,8 @@ export default {
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <button>1231</button>
-    <li v-for="pokemon in pokemons" in>{{ pokemon.name }} <img src="{{pokemon.url}}" /></li>
+    <li v-for="pokemon in pokemons" in>{{ pokemon.name }} <img :src="pokemon.url" /></li>
   </header>
 </template>
 
