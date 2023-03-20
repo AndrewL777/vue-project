@@ -4,11 +4,59 @@ export default {
     return {
       pokemons: [
         {
-          name: 'Charizard',
-          url: 'https://st.depositphotos.com/2935381/4237/i/950/depositphotos_42373695-stock-photo-grey-paper-texture-or-background.jpg'
+          name: '',
+          url: ''
         },
-        { name: 'Charmander' },
-        { name: 'Blastoise' }
+        { name: '', url: '' },
+        { name: '', url: '' },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        }
       ]
     }
   }
