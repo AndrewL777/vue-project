@@ -7,8 +7,14 @@ export default {
           name: '',
           url: ''
         },
-        { name: '', url: '' },
-        { name: '', url: '' },
+        {
+          name: '',
+          url: ''
+        },
+        {
+          name: '',
+          url: ''
+        },
         {
           name: '',
           url: ''
@@ -64,19 +70,23 @@ export default {
 </script>
 <style>
 .card {
-  width: 35.4rem;
-  height: 23.4rem;
-
+  width: 150px;
+  height: 150px;
+  margin-top: 40px;
   border: 3px solid black;
-  box-shadow: 5px 5px 15px;
+  box-shadow: 1px 1px 1px;
+}
+.addTeam {
+  width: 50px;
+  height: 50px;
 }
 </style>
 
 <template>
   <header>
-    <h1>Pick</h1>
+    <h1>r[fie eur tyeam]</h1>
     <div class="card" v-for="pokemon in pokemons">
-      {{ pokemon.name }} <img :src="pokemon.url" />
+      <button class="addTeam">{{ pokemon.name }} <img :src="pokemon.url" /></button>
     </div>
   </header>
 </template>
