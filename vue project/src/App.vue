@@ -50,18 +50,6 @@ export default {
         {
           name: '',
           url: ''
-        },
-        {
-          name: '',
-          url: ''
-        },
-        {
-          name: '',
-          url: ''
-        },
-        {
-          name: '',
-          url: ''
         }
       ]
     }
@@ -69,9 +57,16 @@ export default {
 }
 </script>
 <style>
+.Mon {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 .card {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   margin-top: 40px;
   border: 3px solid black;
   box-shadow: 1px 1px 1px;
@@ -83,14 +78,20 @@ export default {
 </style>
 
 <template>
-  <header>
-    <h1>r[fie eur tyeam]</h1>
-    <div class="card" v-for="pokemon in pokemons">
-      <button class="addTeam">{{ pokemon.name }} <img :src="pokemon.url" /></button>
-    </div>
-  </header>
-</template>
+  <body>
+    <h1>21</h1>
+    <div class="Mon">
+      <div class="card" v-for="pokemon in pokemons">
+        <p>{{ pokemon.name }}</p>
 
+        <button class="addTeam">
+          <p>ADD TO TEAM</p>
+          {{ pokemon.name }} <img :src="pokemon.url" />
+        </button>
+      </div>
+    </div>
+  </body>
+</template>
 <!-- data() { return { items: [{ message: 'Foo' },{ message: 'Bar' }] } } template
 <li v-for="item in items">
   {{ item.message }}
