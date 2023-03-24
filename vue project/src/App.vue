@@ -4,51 +4,51 @@ export default {
     return {
       pokemons: [
         {
-          name: '',
+          name: 'Char',
           url: ''
         },
         {
-          name: '',
+          name: '2',
           url: ''
         },
         {
-          name: '',
+          name: '3',
           url: ''
         },
         {
-          name: '',
+          name: '4',
           url: ''
         },
         {
-          name: '',
+          name: '5',
           url: ''
         },
         {
-          name: '',
+          name: '6',
           url: ''
         },
         {
-          name: '',
+          name: '7',
           url: ''
         },
         {
-          name: '',
+          name: '8',
           url: ''
         },
         {
-          name: '',
+          name: '9',
           url: ''
         },
         {
-          name: '',
+          name: '10',
           url: ''
         },
         {
-          name: '',
+          name: '11',
           url: ''
         },
         {
-          name: '',
+          name: '12',
           url: ''
         }
       ]
@@ -62,18 +62,26 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .card {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   margin-top: 40px;
   border: 3px solid black;
   box-shadow: 1px 1px 1px;
 }
 .addTeam {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
+  margin-left: 5px;
+}
+.pokename {
+  margin: auto;
+  width: 50%;
+  margin-top: 1px;
+  border: 1px solid black;
+  padding: 10px;
 }
 </style>
 
@@ -82,11 +90,11 @@ export default {
     <h1>21</h1>
     <div class="Mon">
       <div class="card" v-for="pokemon in pokemons">
-        <p>{{ pokemon.name }}</p>
+        <p class="pokename">{{ pokemon.name }}</p>
 
         <button class="addTeam">
           <p>ADD TO TEAM</p>
-          {{ pokemon.name }} <img :src="pokemon.url" />
+          <img :src="pokemon.url" />
         </button>
       </div>
     </div>
