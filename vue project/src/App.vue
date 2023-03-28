@@ -57,7 +57,7 @@ export default {
 }
 </script>
 <style>
-.Mon {
+.Mons {
   margin-top: 100px;
   display: flex;
   flex-direction: row;
@@ -84,11 +84,11 @@ export default {
   padding: 10px;
 }
 </style>
-
+<!-- make placeholders  -->
 <template>
   <body>
     <h1>21</h1>
-    <div class="Mon">
+    <div class="Mons">
       <div class="card" v-for="pokemon in pokemons">
         <p class="pokename">{{ pokemon.name }}</p>
 
