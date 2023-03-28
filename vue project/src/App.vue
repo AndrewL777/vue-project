@@ -84,7 +84,7 @@ export default {
   padding: 10px;
 }
 </style>
-<!-- make placeholders  -->
+<!-- make placeholders, use absolute positioning with ref,  -->
 <template>
   <body>
     <h1>21</h1>
