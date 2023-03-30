@@ -91,10 +91,9 @@ export default {
     <div class="Mons">
       <div class="card" v-for="pokemon in pokemons">
         <p class="pokename">{{ pokemon.name }}</p>
-
+        <div @click=""><img :src="pokemon.url" /></div>
         <button class="addTeam">
           <p>ADD TO TEAM</p>
-          <img :src="pokemon.url" />
         </button>
       </div>
     </div>
