@@ -4,52 +4,52 @@ export default {
     return {
       pokemons: [
         {
-          name: 'Char',
-          url: ''
+          name: 'q232214235',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '2',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '3',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '4',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '5',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '6',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '7',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '8',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '9',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '10',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '11',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         },
         {
           name: '12',
-          url: ''
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
         }
       ]
     }
@@ -57,6 +57,9 @@ export default {
 }
 </script>
 <style>
+h1 {
+  text-align: center;
+}
 .Mons {
   margin-top: 100px;
   display: flex;
@@ -69,29 +72,31 @@ export default {
   height: 300px;
   margin-top: 40px;
   border: 3px solid black;
-  box-shadow: 1px 1px 1px;
 }
 .addTeam {
   width: 65px;
   height: 65px;
   margin-left: 5px;
 }
+.image {
+  margin-left: 40px;
+}
 .pokename {
   margin: auto;
   width: 50%;
-  margin-top: 1px;
-  border: 1px solid black;
+  margin-top: 3px;
+  border: 3px solid black;
   padding: 10px;
 }
 </style>
 <!-- make placeholders, use absolute positioning with ref,  -->
 <template>
   <body>
-    <h1>21</h1>
+    <h1>Build Your Team</h1>
     <div class="Mons">
       <div class="card" v-for="pokemon in pokemons">
         <p class="pokename">{{ pokemon.name }}</p>
-        <div @click=""><img :src="pokemon.url" /></div>
+        <div class="image"><img :src="pokemon.url" /></div>
         <button class="addTeam">
           <p>ADD TO TEAM</p>
         </button>
