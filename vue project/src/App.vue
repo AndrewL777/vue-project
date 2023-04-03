@@ -1,57 +1,102 @@
+<template>
+
+    <header> <button v-on:click="navigateTo('cart')"  > View Team </button>
+      <button v-on:click="navigateTo('products')"  > Choose Team </button> </header>
+ 
+ {{ page }}
+    <div v-if="page === 'cart'">  
+  <h1>Your Team</h1>
+  <div class="Mons">
+      <div class="card" v-for="pokemon in cart"
+        :key="pokemon.name">
+        <p class="pokename">{{ pokemon.name }}</p>
+        <div class="image"><img :src="pokemon.url" /></div>
+        <button v-on:click="RemoveItemFromCart(pokemon)" class="addTeam">
+         <h2>-</h2>
+        </button>
+      </div>
+    </div> 
+  </div>    
+
+
+<div v-if="page==='products'"> 
+  <Mons />
+  
+  </div>
+
+</template>
+
+
 <script>
+import Mons from  './views/ChooseThings.Vue';
 export default {
+  name:"pokes",
   data() {
     return {
+      page: "products",
+      cart: [],
       pokemons: [
         {
-          name: 'q232214235',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Lugia',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/249.png'
         },
         {
-          name: '2',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Drowzee',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/096.png'
         },
         {
-          name: '3',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Tinkaton',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/959.png'
         },
         {
-          name: '4',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Hydreigon',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/635.png'
         },
         {
-          name: '5',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Ceruledge',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/937.png'
         },
         {
-          name: '6',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Sandy Shocks',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/989.png'
         },
         {
-          name: '7',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Koraidon',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/1007.png'
         },
         {
-          name: '8',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Rayquaza',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/384.png'
         },
         {
-          name: '9',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Charizard',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png'
         },
         {
-          name: '10',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Guzzlord',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/799.png'
         },
         {
-          name: '11',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Mewtwo',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png'
         },
         {
-          name: '12',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/010.png'
+          name: 'Garchomp',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/445.png'
         }
       ]
+    }
+  },
+  methods: {
+    addItemToCart(pokemon){
+      this.cart.push(pokemon);
+      console.log(this.cart)
+    },
+    navigateTo(page) {
+      this.page = page;
+    },
+    RemoveItemFromCart(pokemon){
+      this.cart.splice(this.cart.indexOf(pokemon));
     }
   }
 }
@@ -59,6 +104,14 @@ export default {
 <style>
 h1 {
   text-align: center;
+}
+h2 {
+  font-size: 10px;
+
+}
+p{
+  text-align: center;
+  font-size: 20px;
 }
 .Mons {
   margin-top: 100px;
@@ -73,12 +126,14 @@ h1 {
   margin-top: 40px;
   border: 3px solid black;
 }
+
 .addTeam {
-  width: 65px;
-  height: 65px;
+  width: 30px;
+  height: 30px;
   margin-left: 5px;
 }
 .image {
+  width: 20px;
   margin-left: 40px;
 }
 .pokename {
@@ -89,22 +144,3 @@ h1 {
   padding: 10px;
 }
 </style>
-<!-- make placeholders, use absolute positioning with ref,  -->
-<template>
-  <body>
-    <h1>Build Your Team</h1>
-    <div class="Mons">
-      <div class="card" v-for="pokemon in pokemons">
-        <p class="pokename">{{ pokemon.name }}</p>
-        <div class="image"><img :src="pokemon.url" /></div>
-        <button class="addTeam">
-          <p>ADD TO TEAM</p>
-        </button>
-      </div>
-    </div>
-  </body>
-</template>
-<!-- data() { return { items: [{ message: 'Foo' },{ message: 'Bar' }] } } template
-<li v-for="item in items">
-  {{ item.message }}
-</li> -->
