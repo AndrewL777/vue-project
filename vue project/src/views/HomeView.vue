@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
 
   <header> <button v-on:click="navigateTo('Pokemon You Chose')"  > View Team </button>
@@ -19,18 +20,30 @@
 
 
 <div v-if="page==='Pick Your Pokemon'"> 
+=======
+
+
+
+<template>
+  <div>
+>>>>>>> parent of 0237d6a (2)
 <h1>Choose Pokemon</h1>  
 <div class="Mons">
     <div class="card" v-for="pokemon in pokemons"
       :key="pokemon.name">
       <p class="pokename">{{ pokemon.name }}</p>
       <div class="image"><img :src="pokemon.url" /></div>
+<<<<<<< HEAD
       <button v-on:click="addItemToTeam(pokemon)" class="addTeam">
+=======
+      <button v-on:click="addItemToCart(pokemon)" class="addTeam">
+>>>>>>> parent of 0237d6a (2)
        <h2>+</h2>
       </button>
     </div>
   </div> 
 </div>
+<<<<<<< HEAD
 
 </template>
 <script>
@@ -209,3 +222,16 @@ padding: 10px;
 <li v-for="item in items">
 {{ item.message }}
 </li> -->
+=======
+</template>
+
+<script>
+export default {}
+
+</script>
+
+<style></style>
+
+
+
+>>>>>>> parent of 0237d6a (2)
