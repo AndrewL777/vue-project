@@ -1,48 +1,56 @@
 <template>
 
-    <header> <button v-on:click="navigateTo('cart')"  > View Team </button>
-      <button v-on:click="navigateTo('products')"  > Choose Team </button> </header>
+    <header> <button v-on:click="navigateTo('Pokemon You Chose')"  > View Team </button>
+      <button v-on:click="navigateTo('Pick Your Pokemon')"  > Choose Team </button> </header>
  
  {{ page }}
-    <div v-if="page === 'cart'">  
+    <div v-if="page === 'Pokemon You Chose'">  
   <h1>Your Team</h1>
   <div class="Mons">
-      <div class="card" v-for="pokemon in cart"
+      <div class="card" v-for="pokemon in team"
         :key="pokemon.name">
         <p class="pokename">{{ pokemon.name }}</p>
         <div class="image"><img :src="pokemon.url" /></div>
-        <button v-on:click="RemoveItemFromCart(pokemon)" class="addTeam">
+        <button v-on:click="RemovePokemonFromTeam(pokemon)" class="addTeam">
          <h2>-</h2>
         </button>
       </div>
+    </div> </div>    
+
+
+<div v-if="page==='Pick Your Pokemon'"> 
+  <h1>Choose Pokemon</h1>  
+  <div class="Mons">
+      <div class="card" v-for="pokemon in pokemons"
+        :key="pokemon.name">
+        <p class="pokename">{{ pokemon.name }}</p>
+        <div class="image"><img :src="pokemon.url" /></div>
+        <button v-on:click="addItemToTeam(pokemon)" class="addTeam">
+         <h2>+</h2>
+        </button>
+      </div>
     </div> 
-  </div>    
-
-
-<div v-if="page==='products'"> 
-  <Mons />
-  
   </div>
 
 </template>
-
-
 <script>
-import Mons from  './views/ChooseThings.Vue';
+
+
+
 export default {
   name:"pokes",
   data() {
     return {
-      page: "products",
-      cart: [],
+      page: "Pick Your Pokemon",
+      team: [],
       pokemons: [
         {
           name: 'Lugia',
           url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/249.png'
         },
         {
-          name: 'Drowzee',
-          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/096.png'
+          name: 'Articuno',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/144.png'
         },
         {
           name: 'Tinkaton',
@@ -83,20 +91,71 @@ export default {
         {
           name: 'Garchomp',
           url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/445.png'
+        },
+        {
+          name: 'Lucario',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/448.png'
+        },
+        {
+          name: 'Dragonite',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/149.png'
+        },
+        {
+          name: 'Suicune',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/245.png'
+        },
+        {
+          name: 'Jolteon',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png'
+        },
+        {
+          name: 'Salamance',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/373.png'
+        },
+        {
+          name: 'Kingambit',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/983.png'
+        },
+        {
+          name: 'Accelgor',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/617.png'
+        },
+        {
+          name: 'Darkrai',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/491.png'
+        },
+        {
+          name: 'Kyogre',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/382.png'
+        },
+        {
+          name: 'Kingdra',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/230.png'
+        },
+        {
+          name: 'Blastoise',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png'
+        },
+        {
+          name: 'Pikachu',
+          url: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png'
         }
+     
+       
+
       ]
     }
   },
   methods: {
-    addItemToCart(pokemon){
-      this.cart.push(pokemon);
-      console.log(this.cart)
+    addItemToTeam(pokemon){
+      this.team.push(pokemon);
+      console.log(this.team)
     },
     navigateTo(page) {
       this.page = page;
     },
-    RemoveItemFromCart(pokemon){
-      this.cart.splice(this.cart.indexOf(pokemon));
+    RemovePokemonFromTeam(pokemon){
+      this.team.splice(this.team.indexOf(pokemon));
     }
   }
 }
@@ -144,3 +203,9 @@ p{
   padding: 10px;
 }
 </style>
+<!-- make placeholders, use absolute positioning with ref,  -->
+
+<!-- data() { return { items: [{ message: 'Foo' },{ message: 'Bar' }] } } template
+<li v-for="item in items">
+  {{ item.message }}
+</li> -->
